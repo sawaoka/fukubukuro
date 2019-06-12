@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <script src="components/loader.js"></script>
+    <link rel="stylesheet" href="components/loader.css">
+    
+    <script>
+        function omikuji (){
+            var dice = Math.floor(Math.random() * 4);
+            var image_name;
+            if (dice == 0) {
+                image_name = "1.JPG";
+            } else if  (dice == 1) {
+                image_name = "2.JPG";
+            } else if  (dice == 2) {
+                image_name = "3.JPG";
+            } else {
+                image_name = "4.JPG";
+            }
+        
+            document.getElementById("saisyo").style["display"] = "none";
+            document.getElementById("kekka").src = "images/" + image_name;
+            document.getElementById("kekka").style["display"] = "inline";
+            document.getElementById("button").src = "images/button1.png";
+        }
+    </script>
+    <style>
+        body {
+            background-image: url("images/haikei.PNG");
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        #hako {
+            margin-top: 60%;
+            margin-left : 0;
+            margin-right : 0;
+        }
+        
+        img {
+           width: 60%; 
+        }
+
+        #bottombar {
+            position: absolute;
+            bottom: 30px;
+            width: 100%;
+        }
+    </style>
+
+    <font size="6"color="#00ffff">
+    p</font>
+    <font size="6"color="#008b8b">
+    a</font>
+    <font size="6"color="#fa8072">
+    u</font>
+    <font size="6"color="#ffa500">
+    l</font>
+    <font size="6"color="#008b8b">
+    s</font>
+    <font size="6"color="#ffb6c1">
+    m</font>
+    <font size="6"color="#fa8072">
+    i</font>
+    <font size="6"color="#f5f5f5">
+    t</font>
+    <font size="6"color="#32cd32">
+    h</font>
+    <font size="6"color="#f0f8ff">
+    福袋</font>
+
+</head>
+<body>
+    <div id="hako">
+        <img id="saisyo" />
+        <img id="kekka" style="display : none;"/>
+    </div>
+    <div id="bottombar">
+        <img id="button" src="images/button2.png" onclick="omikuji()">
+    </div>
+</body>
+</html>
